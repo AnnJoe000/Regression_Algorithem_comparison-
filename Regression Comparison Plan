@@ -1,0 +1,77 @@
+Regression Comparison Plan
+
+1. Loading and Preprocessing
+
+Load the Dataset:
+  Use fetch_california_housing from sklearn.datasets.
+  Convert the dataset into a Pandas DataFrame for easier manipulation.
+
+Handle Missing Values:
+  Check for missing values using isnull() and handle them (if any) using methods like fillna() or dropna().
+
+Feature Scaling:
+  Standardize the dataset using StandardScaler from sklearn.preprocessing to ensure all features are on the same scale.
+
+Justification: 
+  Regression models can perform better when the features are standardized, especially algorithms like Support Vector Regressor and Gradient Boosting Regressor.
+Documentation:
+  Add markdown cells to explain preprocessing steps and why they are necessary.
+
+
+2. Regression Algorithm Implementation 
+Implement and evaluate the following algorithms:
+  Linear Regression:
+  Explain:
+    A simple regression method that models the relationship between independent variables and the target as a linear equation.
+  Suitability:
+    Easy to interpret, performs well on datasets with linear relationships.
+  
+
+Decision Tree Regressor:
+  Explain:
+    A tree-based model that splits data into subsets based on feature values.
+  Suitability: 
+    Handles non-linear relationships well and doesn't require scaling.
+
+
+Random Forest Regressor:
+  Explain:
+    An ensemble method that combines multiple decision trees to improve accuracy and reduce overfitting.
+  Suitability:
+    Robust to outliers and handles complex relationships.
+
+
+Gradient Boosting Regressor:
+  Explain: 
+    An ensemble method that builds trees sequentially, correcting errors of the previous tree.
+  Suitability: 
+    Works well on smaller datasets and captures complex relationships.
+
+
+Support Vector Regressor (SVR):
+  Explain: 
+    A regression method that finds the hyperplane within a margin of tolerance for errors.
+  Suitability:
+    Effective for high-dimensional datasets after feature scaling.
+
+
+Implementation Steps:
+Import necessary libraries: sklearn.linear_model, sklearn.tree, sklearn.ensemble, sklearn.svm.
+Train-test split using train_test_split from sklearn.model_selection.
+Train models on the training set and make predictions on the test set.
+
+3. Model Evaluation and Comparison 
+
+Evaluate each model using these metrics:
+Mean Squared Error (MSE): 
+  Measures the average squared difference between actual and predicted values.
+Mean Absolute Error (MAE): 
+  Measures the average absolute difference between actual and predicted values.
+R² Score: 
+  Indicates how much variance in the target variable is explained by the model.
+Compare Results:
+Create a table or plot to compare metrics for each model.
+
+Identify:
+Best-performing algorithm: Justify based on metrics and dataset characteristics.
+Worst-performing algorithm: Reason out why it performed poorly (e.g., overfitting, sensitivity to scaling, etc.).
