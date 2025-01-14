@@ -1,0 +1,100 @@
+Regression Model Analysis Documentation
+
+Objective
+The objective of this analysis is to evaluate and compare different regression models using the California Housing dataset to determine the best-performing algorithm for predicting median house values.
+
+Dataset Description
+The California Housing dataset contains information about various features of houses in California and their respective median prices. The features include:
+
+Median Income
+House Age
+Average Number of Rooms
+Average Number of Bedrooms
+Population
+Average Occupancy
+Latitude
+Longitude
+
+Steps Performed
+
+1. Data Loading and Conversion
+  Used fetch_california_housing from sklearn to load the dataset.
+  Converted it into a pandas DataFrame for easier handling and analysis.
+
+2. Data Preprocessing
+  Missing Values: Checked for missing values to ensure data integrity. The dataset had no missing values.
+  Feature Scaling: Applied standardization using StandardScaler.
+  Regression models like Support Vector Regressor and Gradient Boosting are sensitive to feature scaling. Standardization ensures all features are on the same scale, improving performance.
+
+3. Splitting Data
+  Split the data into training and testing sets using an 80:20 ratio.
+  To evaluate model performance on unseen data, ensuring it generalizes well.
+
+4. Regression Models Implemented
+Five regression models were chosen:
+Linear Regression
+  Baseline model to understand linear relationships between features and the target.
+
+Decision Tree Regressor
+  Non-linear model that can capture complex relationships and does not require feature scaling.
+
+Random Forest Regressor
+  Ensemble method that reduces overfitting by combining multiple decision trees.
+
+Gradient Boosting Regressor
+  Ensemble method that builds trees sequentially to minimize errors and handle non-linear relationships effectively.
+
+Support Vector Regressor (SVR)
+  Effective for capturing non-linear relationships and works well with standardized data.
+
+5. Model Evaluation Metrics
+Three metrics were used to compare models:
+    Mean Squared Error (MSE): Measures average squared difference between predictions and actual values. Lower values indicate better performance.
+    Mean Absolute Error (MAE): Measures average absolute difference between predictions and actual values. Lower values indicate better performance.
+    R-squared Score (R²): Indicates how well the model explains the variance in the target. Higher values indicate better performance.
+
+Results
+Performance Comparison
+Linear Regression
+MSE: 0.5558
+MAE: 0.5332
+R²: 0.7289
+
+Decision Tree Regressor
+MSE: 0.5077
+MAE: 0.4563
+R²: 0.6125
+
+Random Forest Regressor
+MSE: 0.2538
+MAE: 0.3259
+R²: 0.8063
+
+Gradient Boosting Regressor
+MSE: 0.2940
+MAE: 0.3717
+R²: 0.7756
+
+Support Vector Regressor (SVR)
+MSE: 0.3551
+MAE: 0.3977
+R²: 0.7289
+
+Best-Performing Model
+  Random Forest Regressor
+    Lowest MSE and MAE with a high R² score, indicating it captures the variance in the target effectively and minimizes prediction errors.
+
+Worst-Performing Model
+  Decision Tree Regressor
+    Although it captures non-linear relationships, it is prone to overfitting, leading to poorer generalization compared to ensemble methods.
+
+Visualizations
+  Bar Chart:
+    Compared MSE, MAE, and R² scores across models.
+
+
+Conclusion
+
+The Random Forest Regressor outperformed other models due to its ability to reduce overfitting and capture complex relationships.
+Models like Linear Regression and Decision Tree Regressor were less effective due to their simplicity or overfitting tendencies.
+This analysis highlights the importance of evaluating multiple models and using appropriate metrics to select the best-performing algorithm for a given dataset.
